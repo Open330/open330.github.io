@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#0f1117"/>
+  <!-- Inline: open + 330 with color split -->
+  <text x="256" y="276" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="92" letter-spacing="-2">
+    <tspan font-weight="300" fill="#00d4ff">open</tspan><tspan font-weight="900" fill="#ffffff">330</tspan>
+  </text>
+</svg>
