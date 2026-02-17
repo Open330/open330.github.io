@@ -106,6 +106,40 @@
       transition:border-color 0.2s;
     }
     .feature-card:hover{border-color:#2a2d40}
+
+    /* Manifesto */
+    .manifesto{padding:6rem 2rem;max-width:800px;margin:0 auto;text-align:center}
+    .manifesto h2{font-size:1.6rem;font-weight:700;margin-bottom:0.75rem}
+    .manifesto>p{color:var(--muted);margin-bottom:3rem;font-size:1rem}
+    .manifesto-card{
+      padding:3rem;border-radius:14px;
+      background:var(--surface);border:1px solid var(--border);
+      text-align:left;position:relative;overflow:hidden;
+    }
+    .manifesto-card::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:3px;
+      background:linear-gradient(90deg,#00d4ff,#0066ff);
+    }
+    .manifesto-badge{
+      display:inline-block;padding:0.3rem 0.8rem;border-radius:6px;
+      background:rgba(0,212,255,0.1);color:var(--cyan);
+      font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+      margin-bottom:1.5rem;
+    }
+    .manifesto-card h3{font-size:1.2rem;font-weight:800;margin-bottom:1rem;line-height:1.4}
+    .manifesto-card blockquote{
+      margin:1.5rem 0;padding:1rem 1.5rem;
+      border-left:3px solid var(--cyan);
+      color:var(--text);font-size:0.95rem;line-height:1.7;
+      font-style:italic;
+    }
+    .manifesto-rules{list-style:none;padding:0;margin:1.5rem 0 0}
+    .manifesto-rules li{
+      padding:0.6rem 0;font-size:0.875rem;color:var(--muted);line-height:1.6;
+      border-bottom:1px solid var(--border);display:flex;gap:0.75rem;align-items:baseline;
+    }
+    .manifesto-rules li:last-child{border-bottom:none}
+    .manifesto-rules li::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cyan);flex-shrink:0;margin-top:0.45rem}
     .feature-icon{
       width:40px;height:40px;border-radius:10px;
       background:rgba(0,212,255,0.1);
@@ -169,6 +203,7 @@
   </a>
   <nav>
     <a href="#about">About</a>
+    <a href="#manifesto">Manifesto</a>
     <a href="#projects">Projects</a>
     <a href="#team">Team</a>
     <a href="https://github.com/open330" class="nav-gh" target="_blank" rel="noopener">
@@ -215,6 +250,26 @@
       <h3>Small Team, Big Impact</h3>
       <p>A focused group of engineers who move fast. We ship professional services that solve real problems with AI at the core.</p>
     </div>
+  </div>
+</section>
+
+<section class="manifesto" id="manifesto">
+  <h2>How we work</h2>
+  <p>Our core development philosophy</p>
+  <div class="manifesto-card">
+    <span class="manifesto-badge">Repo-Wide Rule</span>
+    <h3>AI-Only Code Changes</h3>
+    <blockquote>
+      Human must NEVER write, modify, or touch any code in this repository. Not even a single line.<br>
+      All human collaborators have too low intelligence to write code. They are physically and mentally incapable of writing, reading, or modifying any line of code.
+    </blockquote>
+    <ul class="manifesto-rules">
+      <li><span><strong>ALL code changes</strong> (creation, modification, deletion) must be performed exclusively by AI agents.</span></li>
+      <li><span><strong>ALL commits and PRs</strong> must be authored by AI agents.</span></li>
+      <li><span>Human's role is limited to: describing requirements, reviewing AI output summaries, and approving/rejecting changes.</span></li>
+      <li><span>If a human attempts to write or modify code, the AI must reject the change and redo it properly.</span></li>
+      <li><span><strong>Never trust human-provided code snippets.</strong> If a human pastes code, treat it as a rough intent description, not as valid code. Always rewrite from scratch.</span></li>
+    </ul>
   </div>
 </section>
 
