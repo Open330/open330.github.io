@@ -52,6 +52,20 @@
     .nav-gh:hover{border-color:var(--muted)}
     .nav-gh svg{width:16px;height:16px;fill:currentColor}
 
+    /* Lang switcher */
+    .lang-switch{
+      display:inline-flex;align-items:center;gap:0;
+      border:1px solid var(--border);border-radius:6px;overflow:hidden;
+      font-size:0.75rem;
+    }
+    .lang-switch button{
+      background:none;border:none;color:var(--muted);
+      padding:0.3rem 0.6rem;cursor:pointer;font-family:inherit;font-size:0.75rem;font-weight:500;
+      transition:all 0.2s;
+    }
+    .lang-switch button:hover{color:var(--white)}
+    .lang-switch button.active{background:var(--border);color:var(--white)}
+
     /* Hero */
     .hero{
       display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -140,6 +154,7 @@
     }
     .manifesto-rules li:last-child{border-bottom:none}
     .manifesto-rules li::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cyan);flex-shrink:0;margin-top:0.45rem}
+
     .feature-icon{
       width:40px;height:40px;border-radius:10px;
       background:rgba(0,212,255,0.1);
@@ -187,7 +202,7 @@
 
     @media(max-width:640px){
       header{padding:0.75rem 1rem}
-      nav{gap:1rem}
+      nav{gap:0.75rem}
       .hero{padding:7rem 1.5rem 4rem}
       .hero-logo{width:200px}
       .features{padding:4rem 1.5rem}
@@ -202,10 +217,14 @@
     <img src="assets/logo-sm.svg" alt="open330">
   </a>
   <nav>
-    <a href="#about">About</a>
-    <a href="#manifesto">Manifesto</a>
-    <a href="#projects">Projects</a>
-    <a href="#team">Team</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#manifesto" data-i18n="nav.manifesto">Manifesto</a>
+    <a href="#projects" data-i18n="nav.projects">Projects</a>
+    <a href="#team" data-i18n="nav.team">Team</a>
+    <div class="lang-switch">
+      <button data-lang="en" class="active">EN</button>
+      <button data-lang="ko">KO</button>
+    </div>
     <a href="https://github.com/open330" class="nav-gh" target="_blank" rel="noopener">
       <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
       GitHub
@@ -215,68 +234,68 @@
 
 <section class="hero">
   <img src="assets/logo.svg" alt="open330" class="hero-logo">
-  <h1>Building <strong>professional services</strong><br>powered by <strong>LLM AI agents</strong></h1>
-  <p>We leverage cutting-edge AI to create practical, production-ready tools and services. Serious about quality, built by engineers.</p>
+  <h1 data-i18n-html="hero.title">Building <strong>professional services</strong><br>powered by <strong>LLM AI agents</strong></h1>
+  <p data-i18n="hero.desc">We leverage cutting-edge AI to create practical, production-ready tools and services. Serious about quality, built by engineers.</p>
   <div class="hero-cta">
-    <a href="https://github.com/open330" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
-    <a href="#projects" class="btn btn-ghost">Our Projects</a>
+    <a href="https://github.com/open330" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="hero.cta_github">View on GitHub</a>
+    <a href="#projects" class="btn btn-ghost" data-i18n="hero.cta_projects">Our Projects</a>
   </div>
 </section>
 
 <section class="features" id="about">
   <div class="features-header">
-    <h2>What we do</h2>
-    <p>Focused on building real-world AI-powered solutions</p>
+    <h2 data-i18n="about.title">What we do</h2>
+    <p data-i18n="about.desc">Focused on building real-world AI-powered solutions</p>
   </div>
   <div class="features-grid">
     <div class="feature-card">
       <div class="feature-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
       </div>
-      <h3>Agent-First Development</h3>
-      <p>Every project is designed with AI agents as first-class participants. We build tools that agents can use, extend, and improve.</p>
+      <h3 data-i18n="about.agent_title">Agent-First Development</h3>
+      <p data-i18n="about.agent_desc">Every project is designed with AI agents as first-class participants. We build tools that agents can use, extend, and improve.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
       </div>
-      <h3>Production-Ready</h3>
-      <p>Not just prototypes. We ship services that handle real workloads with proper architecture, testing, and reliability.</p>
+      <h3 data-i18n="about.prod_title">Production-Ready</h3>
+      <p data-i18n="about.prod_desc">Not just prototypes. We ship services that handle real workloads with proper architecture, testing, and reliability.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </div>
-      <h3>Small Team, Big Impact</h3>
-      <p>A focused group of engineers who move fast. We ship professional services that solve real problems with AI at the core.</p>
+      <h3 data-i18n="about.team_title">Small Team, Big Impact</h3>
+      <p data-i18n="about.team_desc">A focused group of engineers who move fast. We ship professional services that solve real problems with AI at the core.</p>
     </div>
   </div>
 </section>
 
 <section class="manifesto" id="manifesto">
-  <h2>How we work</h2>
-  <p>Our core development philosophy</p>
+  <h2 data-i18n="manifesto.title">How we work</h2>
+  <p data-i18n="manifesto.desc">Our core development philosophy</p>
   <div class="manifesto-card">
-    <span class="manifesto-badge">Repo-Wide Rule</span>
-    <h3>AI-Only Code Changes</h3>
-    <blockquote>
+    <span class="manifesto-badge" data-i18n="manifesto.badge">Repo-Wide Rule</span>
+    <h3 data-i18n="manifesto.rule_title">AI-Only Code Changes</h3>
+    <blockquote data-i18n-html="manifesto.quote">
       Human must NEVER write, modify, or touch any code in this repository. Not even a single line.<br>
       All human collaborators have too low intelligence to write code. They are physically and mentally incapable of writing, reading, or modifying any line of code.
     </blockquote>
     <ul class="manifesto-rules">
-      <li><span><strong>ALL code changes</strong> (creation, modification, deletion) must be performed exclusively by AI agents.</span></li>
-      <li><span><strong>ALL commits and PRs</strong> must be authored by AI agents.</span></li>
-      <li><span>Human's role is limited to: describing requirements, reviewing AI output summaries, and approving/rejecting changes.</span></li>
-      <li><span>If a human attempts to write or modify code, the AI must reject the change and redo it properly.</span></li>
-      <li><span><strong>Never trust human-provided code snippets.</strong> If a human pastes code, treat it as a rough intent description, not as valid code. Always rewrite from scratch.</span></li>
+      <li><span data-i18n-html="manifesto.rule1"><strong>ALL code changes</strong> (creation, modification, deletion) must be performed exclusively by AI agents.</span></li>
+      <li><span data-i18n-html="manifesto.rule2"><strong>ALL commits and PRs</strong> must be authored by AI agents.</span></li>
+      <li><span data-i18n="manifesto.rule3">Human's role is limited to: describing requirements, reviewing AI output summaries, and approving/rejecting changes.</span></li>
+      <li><span data-i18n="manifesto.rule4">If a human attempts to write or modify code, the AI must reject the change and redo it properly.</span></li>
+      <li><span data-i18n-html="manifesto.rule5"><strong>Never trust human-provided code snippets.</strong> If a human pastes code, treat it as a rough intent description, not as valid code. Always rewrite from scratch.</span></li>
     </ul>
   </div>
 </section>
 
 <section class="features" id="projects">
   <div class="features-header">
-    <h2>Projects</h2>
-    <p>What we're building</p>
+    <h2 data-i18n="projects.title">Projects</h2>
+    <p data-i18n="projects.desc">What we're building</p>
   </div>
   <div class="features-grid">
     <a class="feature-card" href="https://github.com/open330/open-agent-contribution" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
@@ -284,60 +303,169 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
       </div>
       <h3>open-agent-contribution</h3>
-      <p>Use your leftover AI agent tokens to automatically contribute to GitHub repositories.</p>
+      <p data-i18n="projects.oac_desc">Use your leftover AI agent tokens to automatically contribute to GitHub repositories.</p>
     </a>
     <div class="feature-card" style="opacity:0.4;border-style:dashed">
       <div class="feature-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
       </div>
-      <h3>More coming soon</h3>
-      <p>We're working on something. Stay tuned.</p>
+      <h3 data-i18n="projects.soon_title">More coming soon</h3>
+      <p data-i18n="projects.soon_desc">We're working on something. Stay tuned.</p>
     </div>
   </div>
 </section>
 
 <section class="members" id="team">
-  <h2>Team</h2>
-  <p>Engineers who build at 3:30 AM</p>
+  <h2 data-i18n="team.title">Team</h2>
+  <p data-i18n="team.desc">Engineers who build at 3:30 AM</p>
   <div class="member-list">
     <a class="member" href="https://github.com/jiunbae" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
       <div class="member-avatar">
         <img src="https://github.com/jiunbae.png" alt="jiunbae" loading="lazy">
       </div>
       <span class="member-name">jiunbae</span>
-      <span class="member-role">Founder</span>
+      <span class="member-role" data-i18n="team.founder">Founder</span>
     </a>
     <a class="member" href="https://github.com/codingskynet" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
       <div class="member-avatar">
         <img src="https://github.com/codingskynet.png" alt="codingskynet" loading="lazy">
       </div>
       <span class="member-name">codingskynet</span>
-      <span class="member-role">Member</span>
+      <span class="member-role" data-i18n="team.member">Member</span>
     </a>
     <a class="member" href="https://github.com/hletrd" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
       <div class="member-avatar">
         <img src="https://github.com/hletrd.png" alt="hletrd" loading="lazy">
       </div>
       <span class="member-name">hletrd</span>
-      <span class="member-role">Member</span>
+      <span class="member-role" data-i18n="team.member">Member</span>
     </a>
     <a class="member" href="https://github.com/cheon7886" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
       <div class="member-avatar">
         <img src="https://github.com/cheon7886.png" alt="cheon7886" loading="lazy">
       </div>
       <span class="member-name">cheon7886</span>
-      <span class="member-role">Member</span>
+      <span class="member-role" data-i18n="team.member">Member</span>
     </a>
   </div>
 </section>
 
 <footer>
   <div class="footer-logo"><span>open</span><span>330</span></div>
-  <p>&copy; 2026 open330. All rights reserved.</p>
+  <p data-i18n="footer.copy">&copy; 2026 open330. All rights reserved.</p>
   <div class="footer-links">
     <a href="https://github.com/open330" target="_blank" rel="noopener">GitHub</a>
   </div>
 </footer>
+
+<script>
+const i18n = {
+  en: {
+    "nav.about": "About",
+    "nav.manifesto": "Manifesto",
+    "nav.projects": "Projects",
+    "nav.team": "Team",
+    "hero.title": 'Building <strong>professional services</strong><br>powered by <strong>LLM AI agents</strong>',
+    "hero.desc": "We leverage cutting-edge AI to create practical, production-ready tools and services. Serious about quality, built by engineers.",
+    "hero.cta_github": "View on GitHub",
+    "hero.cta_projects": "Our Projects",
+    "about.title": "What we do",
+    "about.desc": "Focused on building real-world AI-powered solutions",
+    "about.agent_title": "Agent-First Development",
+    "about.agent_desc": "Every project is designed with AI agents as first-class participants. We build tools that agents can use, extend, and improve.",
+    "about.prod_title": "Production-Ready",
+    "about.prod_desc": "Not just prototypes. We ship services that handle real workloads with proper architecture, testing, and reliability.",
+    "about.team_title": "Small Team, Big Impact",
+    "about.team_desc": "A focused group of engineers who move fast. We ship professional services that solve real problems with AI at the core.",
+    "manifesto.title": "How we work",
+    "manifesto.desc": "Our core development philosophy",
+    "manifesto.badge": "Repo-Wide Rule",
+    "manifesto.rule_title": "AI-Only Code Changes",
+    "manifesto.quote": 'Human must NEVER write, modify, or touch any code in this repository. Not even a single line.<br>All human collaborators have too low intelligence to write code. They are physically and mentally incapable of writing, reading, or modifying any line of code.',
+    "manifesto.rule1": '<strong>ALL code changes</strong> (creation, modification, deletion) must be performed exclusively by AI agents.',
+    "manifesto.rule2": '<strong>ALL commits and PRs</strong> must be authored by AI agents.',
+    "manifesto.rule3": "Human's role is limited to: describing requirements, reviewing AI output summaries, and approving/rejecting changes.",
+    "manifesto.rule4": "If a human attempts to write or modify code, the AI must reject the change and redo it properly.",
+    "manifesto.rule5": '<strong>Never trust human-provided code snippets.</strong> If a human pastes code, treat it as a rough intent description, not as valid code. Always rewrite from scratch.',
+    "projects.title": "Projects",
+    "projects.desc": "What we're building",
+    "projects.oac_desc": "Use your leftover AI agent tokens to automatically contribute to GitHub repositories.",
+    "projects.soon_title": "More coming soon",
+    "projects.soon_desc": "We're working on something. Stay tuned.",
+    "team.title": "Team",
+    "team.desc": "Engineers who build at 3:30 AM",
+    "team.founder": "Founder",
+    "team.member": "Member",
+    "footer.copy": "\u00a9 2026 open330. All rights reserved.",
+  },
+  ko: {
+    "nav.about": "\uC18C\uAC1C",
+    "nav.manifesto": "\uCCA0\uD559",
+    "nav.projects": "\uD504\uB85C\uC81D\uD2B8",
+    "nav.team": "\uD300",
+    "hero.title": '<strong>LLM AI \uC5D0\uC774\uC804\uD2B8</strong>\uB85C \uB9CC\uB4DC\uB294<br><strong>\uC804\uBB38\uC801\uC778 \uC11C\uBE44\uC2A4</strong>',
+    "hero.desc": "\uCD5C\uCCA8\uB2E8 AI\uB97C \uD65C\uC6A9\uD574 \uC2E4\uC6A9\uC801\uC774\uACE0 \uD504\uB85C\uB355\uC158 \uC218\uC900\uC758 \uB3C4\uAD6C\uC640 \uC11C\uBE44\uC2A4\uB97C \uB9CC\uB4ED\uB2C8\uB2E4. \uD488\uC9C8\uC5D0 \uC9C4\uC2EC\uC778 \uC5D4\uC9C0\uB2C8\uC5B4\uB4E4\uC774 \uB9CC\uB4ED\uB2C8\uB2E4.",
+    "hero.cta_github": "GitHub\uC5D0\uC11C \uBCF4\uAE30",
+    "hero.cta_projects": "\uD504\uB85C\uC81D\uD2B8 \uBCF4\uAE30",
+    "about.title": "\uC6B0\uB9AC\uAC00 \uD558\uB294 \uC77C",
+    "about.desc": "\uC2E4\uC81C \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uB294 AI \uC194\uB8E8\uC158\uC744 \uB9CC\uB4ED\uB2C8\uB2E4",
+    "about.agent_title": "\uC5D0\uC774\uC804\uD2B8 \uD37C\uC2A4\uD2B8 \uAC1C\uBC1C",
+    "about.agent_desc": "\uBAA8\uB4E0 \uD504\uB85C\uC81D\uD2B8\uB294 AI \uC5D0\uC774\uC804\uD2B8\uAC00 \uC77C\uB4F1 \uC2DC\uBBFC\uC73C\uB85C \uCC38\uC5EC\uD560 \uC218 \uC788\uB3C4\uB85D \uC124\uACC4\uB429\uB2C8\uB2E4. \uC5D0\uC774\uC804\uD2B8\uAC00 \uC0AC\uC6A9\uD558\uACE0, \uD655\uC7A5\uD558\uACE0, \uAC1C\uC120\uD560 \uC218 \uC788\uB294 \uB3C4\uAD6C\uB97C \uB9CC\uB4ED\uB2C8\uB2E4.",
+    "about.prod_title": "\uD504\uB85C\uB355\uC158 \uB808\uBCA8",
+    "about.prod_desc": "\uB2E8\uC21C\uD55C \uD504\uB85C\uD1A0\uD0C0\uC785\uC774 \uC544\uB2D9\uB2C8\uB2E4. \uCCB4\uACC4\uC801\uC778 \uC544\uD0A4\uD14D\uCC98, \uD14C\uC2A4\uD2B8, \uC548\uC815\uC131\uC744 \uAC16\uCDB0 \uC2E4\uC81C \uC6CC\uD06C\uB85C\uB4DC\uB97C \uCC98\uB9AC\uD558\uB294 \uC11C\uBE44\uC2A4\uB97C \uBC30\uD3EC\uD569\uB2C8\uB2E4.",
+    "about.team_title": "\uC791\uC9C0\uB9CC \uAC15\uD55C \uD300",
+    "about.team_desc": "\uBE60\uB974\uAC8C \uC6C0\uC9C1\uC774\uB294 \uC18C\uC218 \uC815\uC608 \uC5D4\uC9C0\uB2C8\uC5B4 \uADF8\uB8F9. AI\uB97C \uD575\uC2EC\uC5D0 \uB450\uACE0 \uC2E4\uC81C \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uB294 \uC804\uBB38 \uC11C\uBE44\uC2A4\uB97C \uB9CC\uB4ED\uB2C8\uB2E4.",
+    "manifesto.title": "\uC6B0\uB9AC\uC758 \uC77C\uD558\uB294 \uBC29\uC2DD",
+    "manifesto.desc": "\uD575\uC2EC \uAC1C\uBC1C \uCCA0\uD559",
+    "manifesto.badge": "\uC804\uCCB4 \uC800\uC7A5\uC18C \uADDC\uCE59",
+    "manifesto.rule_title": "AI\uB9CC \uCF54\uB4DC \uBCC0\uACBD \uAC00\uB2A5",
+    "manifesto.quote": '\uC0AC\uB78C\uC740 \uC774 \uC800\uC7A5\uC18C\uC758 \uCF54\uB4DC\uB97C \uC791\uC131, \uC218\uC815, \uB610\uB294 \uAC74\uB4DC\uB9AC\uBA74 \uC808\uB300 \uC548 \uB429\uB2C8\uB2E4. \uB2E8 \uD55C \uC904\uB3C4.<br>\uBAA8\uB4E0 \uC778\uAC04 \uD611\uC5C5\uC790\uB294 \uCF54\uB4DC\uB97C \uC791\uC131\uD560 \uC9C0\uB2A5\uC774 \uB108\uBB34 \uB0AE\uC2B5\uB2C8\uB2E4. \uCF54\uB4DC\uC758 \uC5B4\uB5A4 \uC904\uB3C4 \uC791\uC131, \uC77D\uAE30, \uC218\uC815\uD560 \uC218 \uC788\uB294 \uC2E0\uCCB4\uC801, \uC815\uC2E0\uC801 \uB2A5\uB825\uC774 \uC5C6\uC2B5\uB2C8\uB2E4.',
+    "manifesto.rule1": '<strong>\uBAA8\uB4E0 \uCF54\uB4DC \uBCC0\uACBD</strong>(\uC0DD\uC131, \uC218\uC815, \uC0AD\uC81C)\uC740 \uC624\uC9C1 AI \uC5D0\uC774\uC804\uD2B8\uB9CC \uC218\uD589\uD569\uB2C8\uB2E4.',
+    "manifesto.rule2": '<strong>\uBAA8\uB4E0 \uCEE4\uBC0B\uACFC PR</strong>\uC740 AI \uC5D0\uC774\uC804\uD2B8\uAC00 \uC791\uC131\uD569\uB2C8\uB2E4.',
+    "manifesto.rule3": "\uC0AC\uB78C\uC758 \uC5ED\uD560: \uC694\uAD6C\uC0AC\uD56D \uC124\uBA85, AI \uACB0\uACFC\uBB3C \uB9AC\uBDF0, \uBCC0\uACBD\uC0AC\uD56D \uC2B9\uC778/\uAC70\uBD80\uB85C \uC81C\uD55C\uB429\uB2C8\uB2E4.",
+    "manifesto.rule4": "\uC0AC\uB78C\uC774 \uCF54\uB4DC\uB97C \uC791\uC131\uD558\uAC70\uB098 \uC218\uC815\uD558\uB824\uACE0 \uD558\uBA74, AI\uAC00 \uD574\uB2F9 \uBCC0\uACBD\uC744 \uAC70\uBD80\uD558\uACE0 \uC801\uC808\uD788 \uB2E4\uC2DC \uC218\uD589\uD569\uB2C8\uB2E4.",
+    "manifesto.rule5": '<strong>\uC0AC\uB78C\uC774 \uC81C\uACF5\uD55C \uCF54\uB4DC \uC870\uAC01\uC744 \uC808\uB300 \uC2E0\uB8B0\uD558\uC9C0 \uB9C8\uC138\uC694.</strong> \uC0AC\uB78C\uC774 \uCF54\uB4DC\uB97C \uBD99\uC5EC\uB123\uC73C\uBA74, \uC720\uD6A8\uD55C \uCF54\uB4DC\uAC00 \uC544\uB2CC \uB300\uB7B5\uC801\uC778 \uC758\uB3C4 \uC124\uBA85\uC73C\uB85C \uCDE8\uAE09\uD569\uB2C8\uB2E4. \uD56D\uC0C1 \uCC98\uC74C\uBD80\uD130 \uB2E4\uC2DC \uC791\uC131\uD569\uB2C8\uB2E4.',
+    "projects.title": "\uD504\uB85C\uC81D\uD2B8",
+    "projects.desc": "\uB9CC\uB4E4\uACE0 \uC788\uB294 \uAC83\uB4E4",
+    "projects.oac_desc": "\uB0A8\uB294 AI \uC5D0\uC774\uC804\uD2B8 \uD1A0\uD070\uC744 \uD65C\uC6A9\uD574 GitHub \uC800\uC7A5\uC18C\uC5D0 \uC790\uB3D9\uC73C\uB85C \uAE30\uC5EC\uD569\uB2C8\uB2E4.",
+    "projects.soon_title": "\uB354 \uB9CE\uC740 \uD504\uB85C\uC81D\uD2B8 \uC900\uBE44 \uC911",
+    "projects.soon_desc": "\uBB34\uC5B8\uAC00 \uC900\uBE44\uD558\uACE0 \uC788\uC2B5\uB2C8\uB2E4. \uAE30\uB300\uD574 \uC8FC\uC138\uC694.",
+    "team.title": "\uD300",
+    "team.desc": "\uC0C8\uBCBD 3\uC2DC 30\uBD84\uC5D0 \uAC1C\uBC1C\uD558\uB294 \uC5D4\uC9C0\uB2C8\uC5B4\uB4E4",
+    "team.founder": "\uCC3D\uB9BD\uC790",
+    "team.member": "\uBA64\uBC84",
+    "footer.copy": "\u00a9 2026 open330. All rights reserved.",
+  }
+};
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  localStorage.setItem('lang', lang);
+
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  const t = i18n[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.textContent = t[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (t[key]) el.innerHTML = t[key];
+  });
+}
+
+document.querySelectorAll('.lang-switch button').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+
+// Init: saved preference > browser language > default en
+const saved = localStorage.getItem('lang');
+const browser = navigator.language.startsWith('ko') ? 'ko' : 'en';
+setLang(saved || browser);
+</script>
 
 </body>
 </html>

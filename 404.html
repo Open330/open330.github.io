@@ -26,7 +26,13 @@
 </head>
 <body>
   <h1>404</h1>
-  <p>This page doesn't exist.</p>
-  <a href="/">Back to home</a>
+  <p id="msg">This page doesn't exist.</p>
+  <a href="/" id="back">Back to home</a>
+  <script>
+    if ((localStorage.getItem('lang') || navigator.language).startsWith('ko')) {
+      document.getElementById('msg').textContent = '\uC774 \uD398\uC774\uC9C0\uB294 \uC874\uC7AC\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.';
+      document.getElementById('back').textContent = '\uD648\uC73C\uB85C \uB3CC\uC544\uAC00\uAE30';
+    }
+  </script>
 </body>
 </html>
