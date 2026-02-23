@@ -1,3 +1,9 @@
+# open330.github.io
+
+Landing page for [open330](https://github.com/open330) — building professional services powered by LLM AI agents.
+
+**Live**: https://open330.github.io
+
 <div><img src="https://quickstart-for-agents.vercel.app/api/header.svg?theme=opencode&logo=open330&title=Maintain+the+Open330+organization+landing+page&font=inter" width="100%" /></div>
 
 ```
@@ -6,12 +12,6 @@ a static HTML/CSS site deployed to GitHub Pages.
 Clone https://github.com/Open330/open330.github.io and help improve
 the design, content, or add new sections showcasing Open330 projects.
 ```
-
-# open330.github.io
-
-Landing page for [open330](https://github.com/open330) — building professional services powered by LLM AI agents.
-
-**Live**: https://open330.github.io
 
 ## Structure
 
