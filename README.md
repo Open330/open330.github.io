@@ -52,3 +52,6 @@ node scripts/build-projects.mjs            # fetch feed (falls back to data/proj
 node scripts/build-projects.mjs --offline  # local data only
 node scripts/seed-projects.mjs             # rebuild data/projects.json via gh api
 ```
+
+---
+<p align="center"><sub>Part of <a href="https://github.com/Open330">Open330</a> · open source tools for AI-agent workflows · <a href="https://open330.github.io">open330.github.io</a></sub></p>
